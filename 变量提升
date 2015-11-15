@@ -1,0 +1,19 @@
+变量提升，很简单，就是把变量提升提到函数的top的地方。我么需要说明的是，变量提升 只是提升变量的声明，并不会把赋值也提升上来。
+
+
+var v='Hello World';
+(function(){
+    alert(v);
+    var v='I love you';
+})()
+
+在函数域里定义一个和外部变量一样名称的变量时，变量的声明会提升至函数内的第一句，赋值则不会变。
+
+var v='Hello World';
+(function(){
+    var v;
+    alert(v);
+    v='I love you';
+})()
+
+我们在写js code 的时候，我们需要把变量放在函数级作用域的顶端
